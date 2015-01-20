@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>Chat</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <script src="http://code.jquery.com/jquery-2.1.3.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="javascripts/events.js"></script>
+    <textarea id="messages" rows="25" cols="140"></textarea>
+    <div>
+      <%= name %>
+      <input type="text" id="newMessage" onkeyup="send_by_enter(event)">
+      <input type="submit" onclick="send_message()" onkeyup="send_by_enter(event)">
+    </div>
   </body>
 </html>
