@@ -20,6 +20,8 @@ function sendByEnter(event) {
 
 function sendMessage() {
     var message = $('#newMessage').val();
+    if(!message) return;
+
     socket.emit('new message', message );
     $('#newMessage').val('');
 }
