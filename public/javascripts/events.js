@@ -12,13 +12,13 @@ socket.on('update history', function (message) {
     $('#messages').append(buildMessageNode(message));
 })
 
-function send_by_enter(event) {
+function sendByEnter(event) {
     if (event.keyCode == 13) {
-        send_message();
+        sendMessage();
     }
 }
 
-function send_message() {
+function sendMessage() {
     var message = $('#newMessage').val();
     socket.emit('new message', message );
     $('#newMessage').val('');
