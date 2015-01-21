@@ -2,8 +2,8 @@
 <html>
   <head>
     <title>Chat</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
     <script src="http://code.jquery.com/jquery-2.1.3.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="javascripts/events.js"></script>
@@ -13,9 +13,15 @@
       <div class="panel-body" id="messages">
       </div>
       <div class="panel-footer">
-        <%= name %>
-        <input type="text" id="newMessage" onkeyup="sendByEnter(event)">
-        <input type="submit" onclick="sendMessage()" onkeyup="sendByEnter(event)">
+        <div id="name-wrapper">
+          <div id="name"><%= name %></div><div id="colon">:</div>
+        </div>
+        <div class="row" id="footer">
+          <div class="col-md-10 col-sm-10 col-xs-10">
+            <input type="text" class="form-control" id="newMessage" onkeyup="sendByEnter(event)">
+          </div>
+          <input type="submit" class="btn btn-default" onclick="sendMessage()" onkeyup="sendByEnter(event)">
+        </div>
       </div>
     </div>
   </body>

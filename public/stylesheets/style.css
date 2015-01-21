@@ -1,8 +1,33 @@
 body {
-  padding: 50px;
+  padding: 50px 10px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  width: 1000px;
+  margin: 0 auto;
 }
 
-a {
-  color: #00B7FF;
+#messages {
+  height: 450px;
+}
+
+#name-wrapper {
+  font-weight: 700;
+  padding: 10px 0;
+}
+#name {
+  max-width: 750px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+#name, #colon {
+  display: inline-block;
+  overflow: hidden; /* Yeah, it needs for colon too*/
+}
+
+#footer {
+  padding: 0 15px;
+}
+
+#colwrapper {
+  display: inline-block;
 }
