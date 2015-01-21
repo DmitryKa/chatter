@@ -1,8 +1,13 @@
 body {
   padding: 50px 10px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  width: 1000px;
   margin: 0 auto;
+}
+body.wide {
+  width: 1000px;
+}
+body.narrow {
+  width: 500px;
 }
 
 #messages {
@@ -30,4 +35,8 @@ body {
 
 #colwrapper {
   display: inline-block;
+}
+
+.centered {
+  text-align: center;
 }
