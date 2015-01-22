@@ -1,5 +1,12 @@
 var mongoose = require('mongoose');
+var config = require('../config');
 
-mongoose.connect("mongodb://mongodb:root@ds031671.mongolab.com:31671/chatter");
+var dbUrl = "mongodb://" +
+    config.get('db:user') + ":" +
+    config.get('db:password') +"@" +
+    config.get('db:address') + "/" +
+    config.get('db:name')
+
+mongoose.connect(dbUrl);
 
 module.exports = mongoose;
