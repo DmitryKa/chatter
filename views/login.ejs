@@ -4,13 +4,21 @@
         <title>Chat</title>
         <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
         <link rel='stylesheet' href='/stylesheets/style.css' />
+        <script src="http://code.jquery.com/jquery-2.1.3.js"></script>
+        <script>
+            $(function() {
+                var name = $('#name');
+                name.focus();
+                name.select();
+            });
+        </script>
     </head>
     <body class="narrow">
         <div class="panel panel-default">
             <div class="panel-body centered">
                 <form action="login" method="post" class="form-inline">
-                    <label for="nickname">Enter your name:</label>
-                    <input name="name" class="form-control" type="text" value="<%= name %>">
+                    <label for="name">Enter your name:</label>
+                    <input id="name" name="name" class="form-control" type="text" value="<%= name %>">
                     <input type="submit" class="btn btn-default" value="OK">
                 </form>
             </div>
