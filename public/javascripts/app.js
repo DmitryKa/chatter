@@ -27,5 +27,5 @@ function sendMessage() {
 }
 
 function buildMessageNode(message) {
-    return '<div><span>' + message.name + ':</span> ' + message.message + '</div>';
+    return '<div><span>' + message.name + ':</span> ' + message.text + '</div>';
 }
