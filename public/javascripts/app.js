@@ -1,8 +1,7 @@
-var server_address = 'http://localhost:3000';
+var server_address = location.href;
 var socket = io.connect(server_address);
 
 socket.on('get history', function (history) {
-    console.log(history);
     for(var i in history) {
         $('#messages').append(buildCommonMessageNode(history[i]));
     }
