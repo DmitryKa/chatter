@@ -5,5 +5,9 @@
         "password": "root",
         "address": "ds031671.mongolab.com:31671",
         "name": "chatter"
+    },
+    "schema": {
+        "sizeInBytes": 8388608,
+        "maxDocsNumber": 30
     }
 }
