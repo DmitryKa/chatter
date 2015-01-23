@@ -4,12 +4,16 @@ var socket = io.connect(server_address);
 socket.on('get history', function (history) {
     console.log(history);
     for(var i in history) {
-        $('#messages').append(buildMessageNode(history[i]));
+        $('#messages').append(buildCommonMessageNode(history[i]));
     }
 });
 
-socket.on('update history', function (message) {
-    $('#messages').append(buildMessageNode(message));
+socket.on('common message', function (message) {
+    $('#messages').append(buildCommonMessageNode(message));
+})
+
+socket.on('system message', function(message) {
+    $('#messages').append(buildSystemMessageNode(message));
 })
 
 function sendByEnter(event) {
@@ -26,6 +30,10 @@ function sendMessage() {
     $('#newMessage').val('');
 }
 
-function buildMessageNode(message) {
+function buildCommonMessageNode(message) {
     return '<div><span>' + message.name + ':</span> ' + message.text + '</div>';
+}
+
+function buildSystemMessageNode(message) {
+    return '<div>' + message.text + '</div>';
 }
