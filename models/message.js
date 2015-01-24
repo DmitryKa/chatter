@@ -14,6 +14,10 @@ var messageSchema = new Schema({
         }
     });
 
+messageSchema.pre('save', function (next) {
+    this.text = this.text.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    next();
+})
 var Message = mongoose.model('Message', messageSchema);
 
 module.exports = Message;
