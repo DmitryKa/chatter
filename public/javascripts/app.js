@@ -30,9 +30,9 @@ function sendMessage() {
 }
 
 function buildCommonMessageNode(message) {
-    return '<div><span>' + message.name + ':</span> ' + message.text + '</div>';
+    return '<div><span class="cmn-msg-name">' + message.name + ':</span> ' + message.text + '</div>';
 }
 
 function buildSystemMessageNode(message) {
-    return '<div>' + message.text + '</div>';
+    return '<div class="sys-msg">' + message.text + '</div>';
 }
