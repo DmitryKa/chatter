@@ -3,11 +3,13 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin: 0 auto;
 }
-body.wide {
+div.wide {
   width: 1000px;
+  margin: 0 auto;
 }
-body.narrow {
+div.narrow {
   width: 500px;
+  margin: 0 auto;
 }
 
 #messages {
