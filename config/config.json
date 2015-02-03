@@ -9,5 +9,6 @@
     "schema": {
         "sizeInBytes": 8388608,
         "maxDocsNumber": 30
-    }
+    },
+    "defaultColor": "#000000"
 }

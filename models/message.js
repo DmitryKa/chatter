@@ -5,6 +5,7 @@ var config = require('../config');
 var messageSchema = new Schema({
         name: String,
         text: String,
+        color: String,
         date: { type: Date, default: Date.now }
     },
     {
