@@ -25,7 +25,8 @@ app.set('port', port);
 var server = http.createServer(app);
 
 var io = require('socket.io')(server);
-
+var cookieParser = require('socket.io-cookie-parser');
+io.use(cookieParser());
 require('../lib/events_handler')(io);
 
 /**
