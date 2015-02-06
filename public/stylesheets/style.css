@@ -57,3 +57,9 @@ div.narrow {
   font-weight: 700;
   line-height: 1.2em;
 }
+
+@media (max-width: 1024px) {
+    body { padding: 0; }
+    #messages { height: auto; }
+    div.wide { width: auto; }
+}
