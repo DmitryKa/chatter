@@ -45,5 +45,5 @@ function buildSystemMessageNode(message) {
 }
 
 function scrollToBottom(element) {
-    element.animate({ scrollTop: element.height()}, 'slow');
+    element.animate({ scrollTop: element[0].scrollHeight}, 'slow');
 }
