@@ -21,6 +21,10 @@ socket.on('system message', function(message) {
     scrollToBottom(messages);
 });
 
+socket.on('setCookies', function () {
+
+});
+
 function sendByEnter(event) {
     if (event.keyCode == 13) {
         sendMessage();
@@ -36,8 +40,8 @@ function sendMessage() {
 }
 
 function buildCommonMessageNode(message) {
-    return '<div><span class="cmn-msg-name" style="color: ' + message.color + '">' + message.name + ':</span> ' +
-        message.text + '</div>';
+    return '<div><span class="cmn-msg-name" style="color: ' + message.color + '">' + message.name + ' (' +
+        formatTimestamp(message.date) + '):</span> ' + message.text + '</div>';
 }
 
 function buildSystemMessageNode(message) {
@@ -45,5 +49,12 @@ function buildSystemMessageNode(message) {
 }
 
 function scrollToBottom(element) {
-    element.animate({ scrollTop: element[0].scrollHeight}, 'slow');
+    element.animate({scrollTop: element[0].scrollHeight}, 'slow');
+}
+
+function formatTimestamp(datetimeString) {
+    datetime = new Date(datetimeString);
+    var time = [datetime.getHours(), datetime.getMinutes(), datetime.getSeconds()];
+    for(var i = 0; i < time.length; i++) { if(time[i] < 10) time[i] = '0' + time[i]; }
+    return time[0] + ':' + time[1] + ':' + time[2];
 }
