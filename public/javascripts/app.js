@@ -21,8 +21,12 @@ socket.on('system message', function(message) {
     scrollToBottom(messages);
 });
 
-socket.on('setCookies', function () {
+socket.on('changeCookies', function (changes) {
+    $.cookie(changes.key, changes.value);
+});
 
+socket.on('setName', function(newName) {
+    $('#name').text(newName.name);
 });
 
 function sendByEnter(event) {
