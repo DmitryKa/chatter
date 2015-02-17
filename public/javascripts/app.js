@@ -44,8 +44,9 @@ function sendMessage() {
 }
 
 function buildCommonMessageNode(message) {
-    return '<div><span class="cmn-msg-name" style="color: ' + message.color + '">' + message.name + ' (' +
-        formatTimestamp(message.date) + '):</span> ' + message.text + '</div>';
+    return '<div><span class="cmn-msg-name" style="color: ' + message.color + '">' +
+        message.name.replace(/(.{30}).+/, '$1...') + ' (' + formatTimestamp(message.date) + '):</span> ' +
+        message.text + '</div>';
 }
 
 function buildSystemMessageNode(message) {
